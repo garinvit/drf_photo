@@ -34,24 +34,33 @@ class AlbumTagsSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+
+
 class AlbumSerializer(serializers.ModelSerializer):
-    # tags = AlbumTagsSerializer()
     class Meta:
         model = Album
-        fields = '__all__' #["id", "title", "description", "tags"]
+        fields = '__all__'#["id", "title", "description", "tags", "created_at"]
+        extra_kwargs = {'author': {'required': False}}
 
 
 class PhotoTagsSerializer(serializers.ModelSerializer):
     class Meta:
         model = PhotoTags
-        fields = ["title",]
+        fields = '__all__'
+        extra_kwargs = {'author': {'required': False}}
 
 
 class PhotoSerializer(serializers.ModelSerializer):
-    tags = PhotoTagsSerializer()
+    # image_url = serializers.SerializerMethodField()
+
     class Meta:
         model = Photo
         fields = '__all__'
+
+    # def get_image_url(self, photo):
+    #     request = self.context.get('request')
+    #     image_url = photo.image.url
+    #     return request.build_absolute_uri(image_url)
 #
 #
 # class TagSerializer(serializers.ModelSerializer):

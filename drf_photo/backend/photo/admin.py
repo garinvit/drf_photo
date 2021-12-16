@@ -10,6 +10,7 @@ class AlbumAdmin(admin.ModelAdmin):
 
 @admin.register(Photo)
 class PhotoAdmin(admin.ModelAdmin):
+    # list_display  = [f.name for f in Photo._meta.fields]
     pass
 
 

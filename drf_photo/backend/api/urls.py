@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import CurrentUserView, CreateUserView, AlbumModelView, PhotoTagslView, AlbumTagsView
+from .views import CurrentUserView, CreateUserView, AlbumModelView, PhotoTagslView, AlbumTagsView, PhotoModelView
 from django.urls import path
 from garpix_auth.rest.obtain_auth_token import obtain_auth_token
 
@@ -12,6 +12,7 @@ urlpatterns = [
     path('album-tags/', AlbumTagsView.as_view(), name='album-tags'),
     path('photo-tags/', PhotoTagslView.as_view(), name='photo-tags'),
     path('album/', AlbumModelView.as_view(), name='album'),
+    path('photo/', PhotoModelView.as_view(), name='photo'),
     # path('token-auth/', obtain_auth_token),
     path('auth/', include(('garpix_auth.urls', 'garpix_auth'), namespace='garpix_auth')),
 ]
