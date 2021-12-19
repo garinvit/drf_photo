@@ -6,6 +6,7 @@ from rest_framework import permissions
 from rest_framework import serializers
 # from ..photo.models import Album, AlbumTags, Photo, PhotoTags
 from photo.models import AlbumTags, Album, PhotoTags, Photo
+from rest_framework.fields import CurrentUserDefault
 
 UserModel = get_user_model()
 
@@ -34,50 +35,33 @@ class AlbumTagsSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class PhotoSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Photo
+        fields = '__all__'
+        read_only_fields = ['created_at',]
+        extra_kwargs = {'author': {'required': False}}
 
 
 class AlbumSerializer(serializers.ModelSerializer):
+    photo_set = PhotoSerializer(many=True, required=False)
+    photo_count = serializers.SerializerMethodField('get_photo_count')
+
+    def get_photo_count(self, obj):
+        return obj.photo_set.count()
+
     class Meta:
         model = Album
-        fields = '__all__'#["id", "title", "description", "tags", "created_at"]
-        extra_kwargs = {'author': {'required': False}}
+        fields = '__all__'   #["id", "title", "description", "tags", "created_at"]
+        read_only_fields = ['created_at', 'photo_count']
+        extra_kwargs = {
+            'author': {'required': False},
+        }
 
 
 class PhotoTagsSerializer(serializers.ModelSerializer):
     class Meta:
         model = PhotoTags
         fields = '__all__'
-        extra_kwargs = {'author': {'required': False}}
 
-
-class PhotoSerializer(serializers.ModelSerializer):
-    # image_url = serializers.SerializerMethodField()
-
-    class Meta:
-        model = Photo
-        fields = '__all__'
-
-    # def get_image_url(self, photo):
-    #     request = self.context.get('request')
-    #     image_url = photo.image.url
-    #     return request.build_absolute_uri(image_url)
-#
-#
-# class TagSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Tag
-#         fields = '__all__'
-#
-#
-# class GeneralSerializer(serializers.ModelSerializer):
-#     ingredientinfo_set = IngredientSerializer(many=True)
-#     tags = TagSerializer(many=True)
-#     class Meta:
-#         model = Pizza
-#         fields = '__all__'
-#
-#
-# class PizzaSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Pizza
-#         fields = '__all__'
