@@ -74,32 +74,34 @@ class Photo(models.Model):
     album = models.ForeignKey(Album, null=True, on_delete=models.CASCADE)
 
     def save(self, *args, **kwargs):
-        if 'content_type' in dir(self.image.file):  #иначе файл был уже добавлен
-            img_file = self.image.file
-            content_allow = ('image/jpeg', 'image/jpg', 'image/png')
-            megabyte_limit = 5.0
-            content_type = img_file.content_type
-            if img_file.size > megabyte_limit*1024*1024:
-                raise ValidationError("Max file size is %sMB" % str(megabyte_limit))
-            if content_type not in content_allow:
-                raise ValidationError('Не верный формат. Возможны только png, jpg, jpeg.')
+        if self.image.name:
+            if 'content_type' in dir(self.image.file):  #иначе файл был уже добавлен
+                img_file = self.image.file
+                content_allow = ('image/jpeg', 'image/jpg', 'image/png')
+                megabyte_limit = 5.0
+                content_type = img_file.content_type
+                if img_file.size > megabyte_limit*1024*1024:
+                    raise ValidationError("Max file size is %sMB" % str(megabyte_limit))
+                if content_type not in content_allow:
+                    raise ValidationError('Не верный формат. Возможны только png, jpg, jpeg.')
+        else:
+            self.image_small.delete()
         # raise ValidationError('Test')
 
         super().save(*args, **kwargs)
-
-        img = Image.open(self.image_small.path)
-
-        width, height = img.size
-        fixed = 150
-        if width >= height:
-            percent = (float(height) / float(width))
-            other_size = int((float(fixed) * float(percent)))
-            img = img.resize((fixed, other_size))
-        else:
-            percent = (float(width) / float(height))
-            other_size = int((float(fixed) * float(percent)))
-            img = img.resize((other_size, fixed))
-        img.save(self.image_small.path)
+        if self.image_small.name:
+            img = Image.open(self.image_small.path)
+            width, height = img.size
+            fixed = 150
+            if width >= height:
+                percent = (float(height) / float(width))
+                other_size = int((float(fixed) * float(percent)))
+                img = img.resize((fixed, other_size))
+            else:
+                percent = (float(width) / float(height))
+                other_size = int((float(fixed) * float(percent)))
+                img = img.resize((other_size, fixed))
+            img.save(self.image_small.path)
 
     def __str__(self):
         return self.title

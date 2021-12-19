@@ -12,11 +12,12 @@ class AlbumAdmin(admin.ModelAdmin):
 @admin.register(Photo)
 class PhotoAdmin(admin.ModelAdmin):
     list_display = ["id", "title", "author", "album", "created_at"]
-    fields = ("title", "description", "author", "album", "image", "image_small", "created_at")
+    fields = ("title", "description", "author", "album", "tags", "image", "image_small", "created_at")
     readonly_fields = ('created_at', "image_small",)
 
     def save_model(self, request, obj, form, change):
-        obj.image_small = request.FILES['image']
+        if request.FILES:
+            obj.image_small = request.FILES.get('image')
         super().save_model(request, obj, form, change)
 
 
