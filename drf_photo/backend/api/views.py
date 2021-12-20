@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from django.http import Http404
 from rest_framework import permissions, status
 from rest_framework.decorators import parser_classes
-from rest_framework.exceptions import PermissionDenied
+from rest_framework.exceptions import PermissionDenied, MethodNotAllowed
 from rest_framework.generics import CreateAPIView
 from rest_framework.parsers import MultiPartParser, FileUploadParser, FormParser, JSONParser
 from rest_framework.permissions import IsAuthenticated, AllowAny
@@ -85,18 +85,24 @@ class AlbumModelView(APIView):
                 'status': 'failed'
             }, status=401)
 
-    def put(self, request, pk, format=None):
-        album = self.get_object(pk, request)
-        serializer = AlbumSerializer(album, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response({"success": "Album update", "update_album": serializer.data})
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def put(self, request, pk=None, format=None):
+        if pk:
+            album = self.get_object(pk, request)
+            serializer = AlbumSerializer(album, data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response({"success": "Album update", "update_album": serializer.data})
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        raise MethodNotAllowed("put")
 
-    def delete(self, request, pk, format=None):
-        album = self.get_object(pk, request)
-        album.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+
+    def delete(self, request, pk=None, format=None):
+        if pk:
+            album = self.get_object(pk, request)
+            album.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        raise MethodNotAllowed("delete")
+
 
 
 class PhotoModelView(APIView):
@@ -147,20 +153,25 @@ class PhotoModelView(APIView):
             'status': 'failed'
         }, status=401)
 
-    def put(self, request, pk, format=None):
-        photo = self.get_object(pk, request)
-        data = request.data.copy()
-        data["author"] = request.user.id
-        serializer = PhotoSerializer(photo, data=data, context={"request": request})
-        if serializer.is_valid():
-            serializer.save()
-            return Response({"success": "Photo update", "update_photo": serializer.data})
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def put(self, request, pk=None, format=None):
+        if pk:
+            photo = self.get_object(pk, request)
+            data = request.data.copy()
+            data["author"] = request.user.id
+            serializer = PhotoSerializer(photo, data=data, context={"request": request})
+            if serializer.is_valid():
+                serializer.save()
+                return Response({"success": "Photo update", "update_photo": serializer.data})
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        raise MethodNotAllowed("put")
 
-    def delete(self, request, pk, format=None):
+
+def delete(self, request, pk=None, format=None):
+    if pk:
         photo = self.get_object(pk, request)
         photo.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    raise MethodNotAllowed("delete")
 
 
 class AlbumTagsView(APIView):

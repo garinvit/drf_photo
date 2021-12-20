@@ -69,18 +69,19 @@ class Photo(models.Model):
         null=True,
     )
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
-    image = models.ImageField(verbose_name='Фото', blank=True, upload_to=user_directory_path) # , validators=[validate_image]
+    image = models.ImageField(verbose_name='Фото', blank=True,
+                              upload_to=user_directory_path)  # , validators=[validate_image]
     image_small = models.ImageField(verbose_name='Уменьшенное фото', blank=True, upload_to=user_directory_path_small)
     album = models.ForeignKey(Album, null=True, on_delete=models.CASCADE)
 
     def save(self, *args, **kwargs):
-        if self.image.name:
-            if 'content_type' in dir(self.image.file):  #иначе файл был уже добавлен
+        if self.image.name:  # проверка есть ли вообще файл, если нет то удалить и уменьшенный вариант
+            if 'content_type' in dir(self.image.file):  # иначе файл был уже добавлен
                 img_file = self.image.file
                 content_allow = ('image/jpeg', 'image/jpg', 'image/png')
                 megabyte_limit = 5.0
                 content_type = img_file.content_type
-                if img_file.size > megabyte_limit*1024*1024:
+                if img_file.size > megabyte_limit * 1024 * 1024:
                     raise ValidationError("Max file size is %sMB" % str(megabyte_limit))
                 if content_type not in content_allow:
                     raise ValidationError('Не верный формат. Возможны только png, jpg, jpeg.')
@@ -110,4 +111,3 @@ class Photo(models.Model):
         verbose_name = "Фото"
         verbose_name_plural = "Фотографии"
         ordering = ("-created_at",)
-

@@ -1,10 +1,5 @@
-from django.conf import settings
 from django.contrib.auth import get_user_model
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
-from rest_framework import permissions
 from rest_framework import serializers
-# from ..photo.models import Album, AlbumTags, Photo, PhotoTags
 from photo.models import AlbumTags, Album, PhotoTags, Photo
 from rest_framework.fields import CurrentUserDefault
 
@@ -16,7 +11,6 @@ class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
 
     def create(self, validated_data):
-
         user = UserModel.objects.create_user(
             username=validated_data['username'],
             password=validated_data['password'],
@@ -53,7 +47,7 @@ class AlbumSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Album
-        fields = '__all__'   #["id", "title", "description", "tags", "created_at"]
+        fields = '__all__'  #["id", "title", "author", "description", "created_at", "tags", "photo_count", "photo_set"]
         read_only_fields = ['created_at', 'photo_count']
         extra_kwargs = {
             'author': {'required': False},

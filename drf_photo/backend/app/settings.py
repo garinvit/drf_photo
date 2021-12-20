@@ -6,3 +6,5 @@ INSTALLED_APPS += [
     'rest_framework_social_oauth2',
     'garpix_auth',
 ]
+
+API_URL = 'api/v1'

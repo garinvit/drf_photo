@@ -1,28 +1,23 @@
 {
-	"variables": [],
 	"info": {
+		"_postman_id": "6294687c-18b8-43cd-9f2e-69ecedc764d3",
 		"name": "DRF PHOTO GarinV",
-		"_postman_id": "87e7200d-3c59-03d8-9a64-63ba7e408bf1",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "create user",
 			"request": {
-				"url": "http://garinv.xyz/api/v1/create-user/",
 				"method": "POST",
 				"header": [
 					{
 						"key": "Authorization",
 						"value": "Token 20cbbd13b60fc0c5655a7b3e7c8bc7b507041074",
-						"description": "",
 						"disabled": true
 					},
 					{
 						"key": "Content-Type",
 						"value": "application/json",
-						"description": "",
 						"disabled": true
 					}
 				],
@@ -32,143 +27,196 @@
 						{
 							"key": "username",
 							"value": "newuser1",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "password",
 							"value": "password",
-							"description": "",
 							"type": "text"
 						}
 					]
 				},
-				"description": ""
+				"url": {
+					"raw": "http://garinv.xyz/api/v1/create-user/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v1",
+						"create-user",
+						""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "add album",
 			"request": {
-				"url": "http://garinv.xyz/api/v1/album/",
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b",
-						"description": ""
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
 					}
 				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n    \"album\": \n        {\n            \"title\": \"Разное\",\n            \"description\": \"Созданный из апи\",\n            \"tags\": [\n                1,\n                2,\n                3,\n                4\n            ]\n        }\n    \n}"
 				},
-				"description": ""
+				"url": {
+					"raw": "http://garinv.xyz/api/v1/album/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v1",
+						"album",
+						""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "auth login",
 			"request": {
-				"url": "http://garinv.xyz/api/v1/auth/login/",
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}"
 				},
-				"description": ""
+				"url": {
+					"raw": "http://garinv.xyz/api/v1/auth/login/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login",
+						""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "current-user",
 			"request": {
-				"url": "http://garinv.xyz/api/v1/current-user/",
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b",
-						"description": ""
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
 					}
 				],
-				"body": {},
-				"description": ""
+				"url": {
+					"raw": "http://garinv.xyz/api/v1/current-user/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v1",
+						"current-user",
+						""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "albums get",
 			"request": {
-				"url": "http://garinv.xyz/api/v1/album/",
 				"method": "GET",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b",
-						"description": ""
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"album\": [\n        {\n            \"title\": \"Коты\",\n            \"description\": \"Жирные котики\",\n            \"tags\": [\n                1,\n                3\n            ]\n        }\n    ]\n}"
-				},
-				"description": ""
+				"url": {
+					"raw": "http://garinv.xyz/api/v1/album/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v1",
+						"album",
+						""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "photo get",
 			"request": {
-				"url": "http://garinv.xyz/api/v1/photo/",
 				"method": "GET",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b",
-						"description": ""
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"album\": [\n        {\n            \"title\": \"Коты\",\n            \"description\": \"Жирные котики\",\n            \"tags\": [\n                1,\n                3\n            ]\n        }\n    ]\n}"
-				},
-				"description": ""
+				"url": {
+					"raw": "http://garinv.xyz/api/v1/photo/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v1",
+						"photo",
+						""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "add photo",
 			"request": {
-				"url": "http://garinv.xyz/api/v1/photo/",
 				"method": "POST",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b",
-						"description": ""
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
 					}
 				],
 				"body": {
@@ -176,185 +224,262 @@
 					"formdata": [
 						{
 							"key": "media",
-							"description": "",
 							"type": "file",
 							"src": "cat5.jpg"
 						},
 						{
 							"key": "data",
 							"value": "{\"photos\": {\"title\": \"Cat\", \"description\": \"Test post photo api\", \"album\": 1}}\n",
-							"description": "",
 							"type": "text"
 						}
 					]
 				},
-				"description": ""
+				"url": {
+					"raw": "http://garinv.xyz/api/v1/photo/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v1",
+						"photo",
+						""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "album get pk",
 			"request": {
-				"url": "http://garinv.xyz/api/v1/album/1/",
 				"method": "GET",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b",
-						"description": ""
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"album\": [\n        {\n            \"title\": \"Коты\",\n            \"description\": \"Жирные котики\",\n            \"tags\": [\n                1,\n                3\n            ]\n        }\n    ]\n}"
-				},
-				"description": ""
+				"url": {
+					"raw": "http://garinv.xyz/api/v1/album/1/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v1",
+						"album",
+						"1",
+						""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "PUT update album",
 			"request": {
-				"url": "http://garinv.xyz/api/v1/album/7/",
 				"method": "PUT",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b",
-						"description": ""
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
 					}
 				],
 				"body": {
 					"mode": "raw",
 					"raw": "\n        {\n            \"title\": \"Изменил название\",\n            \"description\": \"Созданный из апи\",\n            \"tags\": [\n                1,\n                3,\n                4\n            ]\n        }\n    \n"
 				},
-				"description": ""
+				"url": {
+					"raw": "http://garinv.xyz/api/v1/album/7/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v1",
+						"album",
+						"7",
+						""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "DELETE album",
 			"request": {
-				"url": "http://garinv.xyz/api/v1/album/7/",
 				"method": "DELETE",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b",
-						"description": ""
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
 					}
 				],
 				"body": {
 					"mode": "raw",
 					"raw": ""
 				},
-				"description": ""
+				"url": {
+					"raw": "http://garinv.xyz/api/v1/album/7/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v1",
+						"album",
+						"7",
+						""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "photo get pk",
 			"request": {
-				"url": "http://garinv.xyz/api/v1/photo/44/",
 				"method": "GET",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b",
-						"description": ""
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"album\": [\n        {\n            \"title\": \"Коты\",\n            \"description\": \"Жирные котики\",\n            \"tags\": [\n                1,\n                3\n            ]\n        }\n    ]\n}"
-				},
-				"description": ""
+				"url": {
+					"raw": "http://garinv.xyz/api/v1/photo/44/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v1",
+						"photo",
+						"44",
+						""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "PUT update photo ",
 			"request": {
-				"url": "http://garinv.xyz/api/v1/photo/43/",
 				"method": "PUT",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b",
-						"description": ""
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
 					}
 				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n        \"id\": 44,\n        \"title\": \"2223\",\n        \"description\": \"222\",\n        \"created_at\": \"2023-12-19T07:59:31.281713+03:00\",\n\n        \"author\": 2,\n        \"album\": 2,\n        \"tags\": [1,2,3]\n    }"
 				},
-				"description": ""
+				"url": {
+					"raw": "http://garinv.xyz/api/v1/photo/43/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v1",
+						"photo",
+						"43",
+						""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "DELETE photo",
 			"request": {
-				"url": "http://garinv.xyz/api/v1/photo/47/",
 				"method": "DELETE",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b",
-						"description": ""
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
 					}
 				],
 				"body": {
 					"mode": "raw",
 					"raw": ""
 				},
-				"description": ""
+				"url": {
+					"raw": "http://garinv.xyz/api/v1/photo/47/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v1",
+						"photo",
+						"47",
+						""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "photos get sord&filter",
 			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
 				"url": {
 					"raw": "http://garinv.xyz/api/v1/photo/?tags=3,4&ordering=created_at",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"garinv",
+						"xyz"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"v1",
@@ -364,45 +489,70 @@
 					"query": [
 						{
 							"key": "tags",
-							"value": "3,4",
-							"equals": true,
-							"description": ""
+							"value": "3,4"
 						},
 						{
 							"key": "ordering",
-							"value": "created_at",
-							"equals": true,
-							"description": ""
+							"value": "created_at"
 						}
-					],
-					"variable": []
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
-					},
-					{
-						"key": "Authorization",
-						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b",
-						"description": ""
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"album\": [\n        {\n            \"title\": \"Коты\",\n            \"description\": \"Жирные котики\",\n            \"tags\": [\n                1,\n                3\n            ]\n        }\n    ]\n}"
-				},
-				"description": ""
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "albums get order count",
 			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
 				"url": {
 					"raw": "http://garinv.xyz/api/v1/album/?ordering=count",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v1",
+						"album",
+						""
+					],
+					"query": [
+						{
+							"key": "ordering",
+							"value": "count"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "albums get",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 07ea34fb74bf33788226e7842d433af08488eb38"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/album/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -416,37 +566,45 @@
 						"v1",
 						"album",
 						""
-					],
-					"query": [
-						{
-							"key": "ordering",
-							"value": "count",
-							"equals": true,
-							"description": ""
-						}
-					],
-					"variable": []
-				},
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api schema ",
+			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b",
-						"description": ""
+						"value": "Bearer 07ea34fb74bf33788226e7842d433af08488eb38"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"album\": [\n        {\n            \"title\": \"Коты\",\n            \"description\": \"Жирные котики\",\n            \"tags\": [\n                1,\n                3\n            ]\n        }\n    ]\n}"
-				},
-				"description": ""
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/schema/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"schema",
+						""
+					]
+				}
 			},
 			"response": []
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }
