@@ -1,0 +1,838 @@
+{
+	"info": {
+		"_postman_id": "97ad93ed-8db5-46c1-8587-935b1e4d68dd",
+		"name": "DRF V2 garinv.xyz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Создать пользователя",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 20cbbd13b60fc0c5655a7b3e7c8bc7b507041074",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "newuser1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/create-user/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"create-user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавить альбом",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"album\": \n        {\n            \"title\": \"Разное2\",\n            \"description\": \"Созданный из апи\",\n            \"tags\": [\n                1,\n                2,\n                3,\n                4\n            ]\n        }\n    \n}"
+				},
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить токен",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"admin\", \"password\": \"admin\"}"
+				},
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/auth/login/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"auth",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Текущий пользователь",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/current-user/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"current-user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "все альбомы одного автора",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "все фото одного автора",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/photo/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						"photo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавить одно фото по ссылке альбома",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "media",
+							"type": "file",
+							"src": "/home/vitaliy/Изображения/drf/cat5.jpg"
+						},
+						{
+							"key": "data",
+							"value": "{\"photos\": {\"title\": \"Cat\", \"description\": \"Test post photo api\"}}\n",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/5/photo/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						"5",
+						"photo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить альбом по ссылке",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/1/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Обновить альбом",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n        {\n            \"title\": \"Изменил название\",\n            \"description\": \"Созданный из апи\",\n            \"tags\": [\n                1,\n                3,\n                4\n            ]\n        }\n    \n"
+				},
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/6/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						"6",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удалить альбом",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/8/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						"8",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить фото по ссылке",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/photo/10/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						"photo",
+						"10",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT обновить фото",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"id\": 33,\n        \"title\": \"2223\",\n        \"description\": \"222\",\n        \"created_at\": \"20244-12-19T07:59:31.281713+03:00\",\n        \"album\": 2,\n        \"tags\": [1,2,3]\n    }"
+				},
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/photo/33/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						"photo",
+						"33",
+						""
+					]
+				},
+				"description": "Альбом можно выбрать только который принадлежит этому автору"
+			},
+			"response": []
+		},
+		{
+			"name": "Удалить фото по ссылке",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/photo/33/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						"photo",
+						"33",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить фото фильтр Тэг и дата",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/photo/?tags=3,4&ordering=created_at",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						"photo",
+						""
+					],
+					"query": [
+						{
+							"key": "tags",
+							"value": "3,4"
+						},
+						{
+							"key": "ordering",
+							"value": "created_at"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить альбомы упорядочить по кол-ву фоток",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/?ordering=count",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						""
+					],
+					"query": [
+						{
+							"key": "ordering",
+							"value": "count"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api schema ",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 07ea34fb74bf33788226e7842d433af08488eb38"
+					}
+				],
+				"url": {
+					"raw": "http://garinv.xyz/schema/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"schema",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить альбомы не показывать теги и фото",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/?photos=false&display_tags=false&ordering=id",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						""
+					],
+					"query": [
+						{
+							"key": "photos",
+							"value": "false"
+						},
+						{
+							"key": "display_tags",
+							"value": "false"
+						},
+						{
+							"key": "ordering",
+							"value": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавить несколько фото в альбом по ссылке",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "media",
+							"type": "file",
+							"src": [
+								"/home/vitaliy/Изображения/drf/car3.jpeg",
+								"/home/vitaliy/Изображения/drf/car2.jpg",
+								"/home/vitaliy/Изображения/drf/car1.jpg"
+							]
+						},
+						{
+							"key": "data",
+							"value": "{\"photos\": [{\"title\": \"car1\", \"description\": \"Несколько фото из апи1\", \"tags\":[1,2]}, {\"title\": \"car2\", \"description\": \"Несколько фото из апи2\",  \"tags\":[3,4]}, {\"title\": \"car3\", \"description\": \"Несколько фото из апи3\", \"tags\":[5,6]}]}\n",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/5/photo/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						"5",
+						"photo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавить одно фото album/photo/ ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\"photos\": {\"title\": \"Cat\", \"description\": \"Test post photo api\", \"album\":5}}\n",
+							"type": "text"
+						},
+						{
+							"key": "media",
+							"type": "file",
+							"src": "/home/vitaliy/Изображения/drf/cat5.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/photo/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						"photo",
+						""
+					]
+				},
+				"description": "Нужен ИД альбома"
+			},
+			"response": []
+		},
+		{
+			"name": "Добавить несколько фото в альбом по ID альбома",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "media",
+							"type": "file",
+							"src": [
+								"/home/vitaliy/Изображения/drf/car3.jpeg",
+								"/home/vitaliy/Изображения/drf/car2.jpg",
+								"/home/vitaliy/Изображения/drf/car1.jpg"
+							]
+						},
+						{
+							"key": "data",
+							"value": "{\"photos\": [{\"title\": \"car1\", \"description\": \"Несколько фото из апи1\", \"tags\":[1,2], \"album\":5}, \n{\"title\": \"car2\", \"description\": \"Несколько фото из апи2\",  \"tags\":[3,4], \"album\":5}, {\"title\": \"car3\", \"description\": \"Несколько фото из апи3\", \"tags\":[5,6], \"album\":5}]}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/photo/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						"photo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "все фото в одном альбоме",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/1/photo/?ordering=id",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						"1",
+						"photo",
+						""
+					],
+					"query": [
+						{
+							"key": "ordering",
+							"value": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удалить фотографии по ids",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"photo_ids\":[35,36,37]}"
+				},
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/photo/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						"photo",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

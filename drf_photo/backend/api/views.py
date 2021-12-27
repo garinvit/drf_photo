@@ -1,21 +1,20 @@
 from django.contrib.auth import get_user_model
 from django.http import Http404
-from rest_framework import permissions, status
-from rest_framework.decorators import parser_classes
+from rest_framework import status
 from rest_framework.exceptions import PermissionDenied, MethodNotAllowed
 from rest_framework.generics import CreateAPIView
-from rest_framework.parsers import MultiPartParser, FileUploadParser, FormParser, JSONParser
+from rest_framework.parsers import JSONParser
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import UserSerializer, PhotoSerializer, AlbumSerializer, AlbumTagsSerializer, PhotoTagsSerializer
-from photo.models import AlbumTags, Album, PhotoTags, Photo
-from .utils import MultipartJsonParser
+from .serializers import UserSerializer, PhotoSerializer, AlbumSerializer, TagsSerializer
+from photo.models import Tags, Album, Photo
+from app.utils import MultipartJsonParser
 
 
 class CreateUserView(CreateAPIView):
     model = get_user_model()
-    permission_classes = (AllowAny, )
+    permission_classes = (AllowAny,)
     serializer_class = UserSerializer
 
 
@@ -33,7 +32,7 @@ class CurrentUserView(APIView):
 
 
 class AlbumModelView(APIView):
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
 
     def get_object(self, pk, request):
         try:
@@ -81,20 +80,17 @@ class AlbumModelView(APIView):
             if serializer.is_valid(raise_exception=True):
                 album_inst = serializer.save()
             return Response({"success": f"Album '{album_inst.title}' created successfully", "id": album_inst.id})
-        return Response({
-                'status': 'failed'
-            }, status=401)
+        return Response({'status': 'failed'}, status=401)
 
     def put(self, request, pk=None, format=None):
         if pk:
             album = self.get_object(pk, request)
-            serializer = AlbumSerializer(album, data=request.data)
+            serializer = AlbumSerializer(album, data=request.data, partial=True)
             if serializer.is_valid():
                 serializer.save()
                 return Response({"success": "Album update", "update_album": serializer.data})
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         raise MethodNotAllowed("put")
-
 
     def delete(self, request, pk=None, format=None):
         if pk:
@@ -104,15 +100,14 @@ class AlbumModelView(APIView):
         raise MethodNotAllowed("delete")
 
 
-
 class PhotoModelView(APIView):
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (IsAuthenticated,)
     parser_classes = (MultipartJsonParser, JSONParser)
 
     def get_object(self, pk, request):
         try:
             obj = Photo.objects.get(pk=pk)
-            if obj.author.id != request.user.id:
+            if obj.get_author() != request.user.id:
                 raise PermissionDenied({"message": "You don't have permission to access"})
             else:
                 return obj
@@ -141,7 +136,6 @@ class PhotoModelView(APIView):
         if request.user.is_authenticated:
             photo = request.data.dict().get('photos')
             # print(type(photo), photo, request.user.id)
-            photo["author"] = request.user.id
             photo["image"] = request.data.get('media')
             photo["image_small"] = request.data.get('media')
             print(type(photo), photo, request.user.id)
@@ -158,45 +152,30 @@ class PhotoModelView(APIView):
             photo = self.get_object(pk, request)
             data = request.data.copy()
             data["author"] = request.user.id
-            serializer = PhotoSerializer(photo, data=data, context={"request": request})
+            serializer = PhotoSerializer(photo, data=data, context={"request": request}, partial=True)
             if serializer.is_valid():
                 serializer.save()
                 return Response({"success": "Photo update", "update_photo": serializer.data})
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         raise MethodNotAllowed("put")
 
+    def delete(self, request, pk=None, format=None):
+        if pk:
+            photo = self.get_object(pk, request)
+            photo.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        raise MethodNotAllowed("delete")
 
-def delete(self, request, pk=None, format=None):
-    if pk:
-        photo = self.get_object(pk, request)
-        photo.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
-    raise MethodNotAllowed("delete")
 
-
-class AlbumTagsView(APIView):
+class TagsView(APIView):
     def get(self, request):
-        album_tags = AlbumTags.objects.all()
-        serializer = AlbumTagsSerializer(album_tags, many=True)
-        return Response({'albums_tags': serializer.data})
+        tags = Tags.objects.all()
+        serializer = TagsSerializer(tags, many=True)
+        return Response({'tags': serializer.data})
 
     def post(self, request):
-        album_tag = request.data.get('album_tag')
-        serializer = AlbumTagsSerializer(data=album_tag)
+        tag = request.data.get('tag')
+        serializer = TagsSerializer(data=tag)
         if serializer.is_valid(raise_exception=True):
-            album_tag_inst = serializer.save()
-        return Response({"success": f"Album tag'{album_tag_inst.title}' created successfully"})
-
-
-class PhotoTagslView(APIView):
-    def get(self, request):
-        photo_tags = PhotoTags.objects.all()
-        serializer = PhotoTagsSerializer(photo_tags, many=True)
-        return Response({'photo_tags': serializer.data})
-
-    def post(self, request):
-        photo_tag = request.data.get('photo_tag')
-        serializer = PhotoTagsSerializer(data=photo_tag)
-        if serializer.is_valid(raise_exception=True):
-            photo_tag_inst = serializer.save()
-        return Response({"success": f"Photo tag'{photo_tag_inst.title}' created successfully"})
+            tag_inst = serializer.save()
+        return Response({"success": f"Tag '{tag_inst.title}' created successfully"})

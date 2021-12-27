@@ -1,629 +1,5 @@
 [
 {
-    "model": "admin.logentry",
-    "pk": 1,
-    "fields": {
-        "action_time": "2021-12-19T09:14:50.088Z",
-        "user": 1,
-        "content_type": 35,
-        "object_id": "1",
-        "object_repr": "Кошки",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 2,
-    "fields": {
-        "action_time": "2021-12-19T09:14:54.833Z",
-        "user": 1,
-        "content_type": 35,
-        "object_id": "2",
-        "object_repr": "Животные",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 3,
-    "fields": {
-        "action_time": "2021-12-19T09:14:59.559Z",
-        "user": 1,
-        "content_type": 35,
-        "object_id": "3",
-        "object_repr": "Люди",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 4,
-    "fields": {
-        "action_time": "2021-12-19T09:15:03.963Z",
-        "user": 1,
-        "content_type": 35,
-        "object_id": "4",
-        "object_repr": "Отпуск",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 5,
-    "fields": {
-        "action_time": "2021-12-19T09:15:08.607Z",
-        "user": 1,
-        "content_type": 35,
-        "object_id": "5",
-        "object_repr": "Природа",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 6,
-    "fields": {
-        "action_time": "2021-12-19T09:15:13.592Z",
-        "user": 1,
-        "content_type": 35,
-        "object_id": "6",
-        "object_repr": "Машины",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 7,
-    "fields": {
-        "action_time": "2021-12-19T09:15:27.488Z",
-        "user": 1,
-        "content_type": 34,
-        "object_id": "1",
-        "object_repr": "Кошки",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 8,
-    "fields": {
-        "action_time": "2021-12-19T09:15:36.059Z",
-        "user": 1,
-        "content_type": 34,
-        "object_id": "2",
-        "object_repr": "Животные",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 9,
-    "fields": {
-        "action_time": "2021-12-19T09:15:40.720Z",
-        "user": 1,
-        "content_type": 34,
-        "object_id": "3",
-        "object_repr": "Люди",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 10,
-    "fields": {
-        "action_time": "2021-12-19T09:15:50.972Z",
-        "user": 1,
-        "content_type": 34,
-        "object_id": "4",
-        "object_repr": "Отдых",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 11,
-    "fields": {
-        "action_time": "2021-12-19T09:15:55.758Z",
-        "user": 1,
-        "content_type": 34,
-        "object_id": "5",
-        "object_repr": "Природа",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 12,
-    "fields": {
-        "action_time": "2021-12-19T09:16:14.528Z",
-        "user": 1,
-        "content_type": 34,
-        "object_id": "6",
-        "object_repr": "Машины",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 13,
-    "fields": {
-        "action_time": "2021-12-19T09:16:52.481Z",
-        "user": 1,
-        "content_type": 37,
-        "object_id": "1",
-        "object_repr": "Толстые кошки",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 14,
-    "fields": {
-        "action_time": "2021-12-19T09:17:17.900Z",
-        "user": 1,
-        "content_type": 37,
-        "object_id": "2",
-        "object_repr": "Машины",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 15,
-    "fields": {
-        "action_time": "2021-12-19T09:18:03.920Z",
-        "user": 1,
-        "content_type": 37,
-        "object_id": "3",
-        "object_repr": "Природа",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 16,
-    "fields": {
-        "action_time": "2021-12-19T09:18:54.369Z",
-        "user": 1,
-        "content_type": 37,
-        "object_id": "4",
-        "object_repr": "Люди",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 17,
-    "fields": {
-        "action_time": "2021-12-19T15:18:58.980Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "1",
-        "object_repr": "Люди",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 18,
-    "fields": {
-        "action_time": "2021-12-19T15:19:36.567Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "2",
-        "object_repr": "Еще люди",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 19,
-    "fields": {
-        "action_time": "2021-12-19T15:20:11.521Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "3",
-        "object_repr": "Гарольд который скрывает боль",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 20,
-    "fields": {
-        "action_time": "2021-12-19T15:20:54.192Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "4",
-        "object_repr": "Еще Гарольд",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 21,
-    "fields": {
-        "action_time": "2021-12-19T15:27:46.733Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "1",
-        "object_repr": "Люди",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u044d\\u0433\\u0438 \\u0434\\u043b\\u044f \\u0430\\u043b\\u044c\\u0431\\u043e\\u043c\\u0430\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 22,
-    "fields": {
-        "action_time": "2021-12-19T15:28:08.299Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "2",
-        "object_repr": "Еще люди",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u044d\\u0433\\u0438 \\u0434\\u043b\\u044f \\u0430\\u043b\\u044c\\u0431\\u043e\\u043c\\u0430\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 23,
-    "fields": {
-        "action_time": "2021-12-19T15:28:14.929Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "3",
-        "object_repr": "Гарольд который скрывает боль",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u044d\\u0433\\u0438 \\u0434\\u043b\\u044f \\u0430\\u043b\\u044c\\u0431\\u043e\\u043c\\u0430\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 24,
-    "fields": {
-        "action_time": "2021-12-19T15:28:20.523Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "4",
-        "object_repr": "Еще Гарольд",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u044d\\u0433\\u0438 \\u0434\\u043b\\u044f \\u0430\\u043b\\u044c\\u0431\\u043e\\u043c\\u0430\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 25,
-    "fields": {
-        "action_time": "2021-12-19T15:30:03.338Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "5",
-        "object_repr": "Природа1",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 26,
-    "fields": {
-        "action_time": "2021-12-19T15:30:44.066Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "6",
-        "object_repr": "Природа2",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 27,
-    "fields": {
-        "action_time": "2021-12-19T15:31:24.176Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "7",
-        "object_repr": "Озеро",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 28,
-    "fields": {
-        "action_time": "2021-12-19T15:32:41.352Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "8",
-        "object_repr": "Толстый кот",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 29,
-    "fields": {
-        "action_time": "2021-12-19T15:33:36.614Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "9",
-        "object_repr": "И еще толстый кот",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 30,
-    "fields": {
-        "action_time": "2021-12-19T15:33:46.385Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "1",
-        "object_repr": "Люди",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"Author\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 31,
-    "fields": {
-        "action_time": "2021-12-19T15:33:57.870Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "2",
-        "object_repr": "Еще люди",
-        "action_flag": 2,
-        "change_message": "[]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 32,
-    "fields": {
-        "action_time": "2021-12-19T15:45:06.493Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "2",
-        "object_repr": "Еще люди",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 33,
-    "fields": {
-        "action_time": "2021-12-19T15:51:22.139Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "2",
-        "object_repr": "Еще люди",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 34,
-    "fields": {
-        "action_time": "2021-12-19T15:52:30.537Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "2",
-        "object_repr": "Еще люди",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"Author\", \"\\u0424\\u043e\\u0442\\u043e\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 35,
-    "fields": {
-        "action_time": "2021-12-19T15:52:45.793Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "2",
-        "object_repr": "Еще люди",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 36,
-    "fields": {
-        "action_time": "2021-12-19T15:52:56.768Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "1",
-        "object_repr": "Люди",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 37,
-    "fields": {
-        "action_time": "2021-12-19T15:53:11.554Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "1",
-        "object_repr": "Люди",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 38,
-    "fields": {
-        "action_time": "2021-12-19T15:53:38.792Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "3",
-        "object_repr": "Гарольд который скрывает боль",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"Author\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 39,
-    "fields": {
-        "action_time": "2021-12-19T15:53:54.449Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "3",
-        "object_repr": "Гарольд который скрывает боль",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 40,
-    "fields": {
-        "action_time": "2021-12-19T15:54:00.688Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "3",
-        "object_repr": "Гарольд который скрывает боль",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 41,
-    "fields": {
-        "action_time": "2021-12-19T15:54:17.431Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "3",
-        "object_repr": "Гарольд который скрывает боль",
-        "action_flag": 2,
-        "change_message": "[]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 42,
-    "fields": {
-        "action_time": "2021-12-19T15:54:24.895Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "4",
-        "object_repr": "Еще Гарольд",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"Author\", \"\\u0424\\u043e\\u0442\\u043e\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 43,
-    "fields": {
-        "action_time": "2021-12-19T15:54:32.415Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "4",
-        "object_repr": "Еще Гарольд",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"\\u0424\\u043e\\u0442\\u043e\"]}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 44,
-    "fields": {
-        "action_time": "2021-12-19T15:55:58.905Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "10",
-        "object_repr": "Третий кот",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 45,
-    "fields": {
-        "action_time": "2021-12-19T15:56:37.712Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "11",
-        "object_repr": "Кот 4",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 46,
-    "fields": {
-        "action_time": "2021-12-19T16:00:28.764Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "13",
-        "object_repr": "Машина",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 47,
-    "fields": {
-        "action_time": "2021-12-19T16:02:51.457Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "14",
-        "object_repr": "Копейка",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
-    "model": "admin.logentry",
-    "pk": 48,
-    "fields": {
-        "action_time": "2021-12-19T16:03:56.469Z",
-        "user": 1,
-        "content_type": 36,
-        "object_id": "15",
-        "object_repr": "Машина 3",
-        "action_flag": 1,
-        "change_message": "[{\"added\": {}}]"
-    }
-},
-{
     "model": "auth.permission",
     "pk": 1,
     "fields": {
@@ -1815,72 +1191,72 @@
     "model": "auth.permission",
     "pk": 133,
     "fields": {
-        "name": "Can add Тэг альбомов",
+        "name": "Can add Альбом",
         "content_type": 34,
-        "codename": "add_albumtags"
+        "codename": "add_album"
     }
 },
 {
     "model": "auth.permission",
     "pk": 134,
     "fields": {
-        "name": "Can change Тэг альбомов",
+        "name": "Can change Альбом",
         "content_type": 34,
-        "codename": "change_albumtags"
+        "codename": "change_album"
     }
 },
 {
     "model": "auth.permission",
     "pk": 135,
     "fields": {
-        "name": "Can delete Тэг альбомов",
+        "name": "Can delete Альбом",
         "content_type": 34,
-        "codename": "delete_albumtags"
+        "codename": "delete_album"
     }
 },
 {
     "model": "auth.permission",
     "pk": 136,
     "fields": {
-        "name": "Can view Тэг альбомов",
+        "name": "Can view Альбом",
         "content_type": 34,
-        "codename": "view_albumtags"
+        "codename": "view_album"
     }
 },
 {
     "model": "auth.permission",
     "pk": 137,
     "fields": {
-        "name": "Can add Тэг для фотографий",
+        "name": "Can add Тэг",
         "content_type": 35,
-        "codename": "add_phototags"
+        "codename": "add_tags"
     }
 },
 {
     "model": "auth.permission",
     "pk": 138,
     "fields": {
-        "name": "Can change Тэг для фотографий",
+        "name": "Can change Тэг",
         "content_type": 35,
-        "codename": "change_phototags"
+        "codename": "change_tags"
     }
 },
 {
     "model": "auth.permission",
     "pk": 139,
     "fields": {
-        "name": "Can delete Тэг для фотографий",
+        "name": "Can delete Тэг",
         "content_type": 35,
-        "codename": "delete_phototags"
+        "codename": "delete_tags"
     }
 },
 {
     "model": "auth.permission",
     "pk": 140,
     "fields": {
-        "name": "Can view Тэг для фотографий",
+        "name": "Can view Тэг",
         "content_type": 35,
-        "codename": "view_phototags"
+        "codename": "view_tags"
     }
 },
 {
@@ -1923,107 +1299,71 @@
     "model": "auth.permission",
     "pk": 145,
     "fields": {
-        "name": "Can add Альбом",
+        "name": "Can add Refresh Token",
         "content_type": 37,
-        "codename": "add_album"
+        "codename": "add_refreshtoken"
     }
 },
 {
     "model": "auth.permission",
     "pk": 146,
     "fields": {
-        "name": "Can change Альбом",
+        "name": "Can change Refresh Token",
         "content_type": 37,
-        "codename": "change_album"
+        "codename": "change_refreshtoken"
     }
 },
 {
     "model": "auth.permission",
     "pk": 147,
     "fields": {
-        "name": "Can delete Альбом",
+        "name": "Can delete Refresh Token",
         "content_type": 37,
-        "codename": "delete_album"
+        "codename": "delete_refreshtoken"
     }
 },
 {
     "model": "auth.permission",
     "pk": 148,
     "fields": {
-        "name": "Can view Альбом",
+        "name": "Can view Refresh Token",
         "content_type": 37,
-        "codename": "view_album"
+        "codename": "view_refreshtoken"
     }
 },
 {
     "model": "auth.permission",
     "pk": 149,
     "fields": {
-        "name": "Can add Refresh Token",
+        "name": "Can add Access Token",
         "content_type": 38,
-        "codename": "add_refreshtoken"
+        "codename": "add_accesstoken"
     }
 },
 {
     "model": "auth.permission",
     "pk": 150,
     "fields": {
-        "name": "Can change Refresh Token",
+        "name": "Can change Access Token",
         "content_type": 38,
-        "codename": "change_refreshtoken"
+        "codename": "change_accesstoken"
     }
 },
 {
     "model": "auth.permission",
     "pk": 151,
     "fields": {
-        "name": "Can delete Refresh Token",
+        "name": "Can delete Access Token",
         "content_type": 38,
-        "codename": "delete_refreshtoken"
+        "codename": "delete_accesstoken"
     }
 },
 {
     "model": "auth.permission",
     "pk": 152,
     "fields": {
-        "name": "Can view Refresh Token",
-        "content_type": 38,
-        "codename": "view_refreshtoken"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 153,
-    "fields": {
-        "name": "Can add Access Token",
-        "content_type": 39,
-        "codename": "add_accesstoken"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 154,
-    "fields": {
-        "name": "Can change Access Token",
-        "content_type": 39,
-        "codename": "change_accesstoken"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 155,
-    "fields": {
-        "name": "Can delete Access Token",
-        "content_type": 39,
-        "codename": "delete_accesstoken"
-    }
-},
-{
-    "model": "auth.permission",
-    "pk": 156,
-    "fields": {
         "name": "Can view Access Token",
-        "content_type": 39,
+        "content_type": 38,
         "codename": "view_accesstoken"
     }
 },
@@ -2296,7 +1636,7 @@
     "pk": 34,
     "fields": {
         "app_label": "photo",
-        "model": "albumtags"
+        "model": "album"
     }
 },
 {
@@ -2304,7 +1644,7 @@
     "pk": 35,
     "fields": {
         "app_label": "photo",
-        "model": "phototags"
+        "model": "tags"
     }
 },
 {
@@ -2319,8 +1659,8 @@
     "model": "contenttypes.contenttype",
     "pk": 37,
     "fields": {
-        "app_label": "photo",
-        "model": "album"
+        "app_label": "garpix_auth",
+        "model": "refreshtoken"
     }
 },
 {
@@ -2328,23 +1668,15 @@
     "pk": 38,
     "fields": {
         "app_label": "garpix_auth",
-        "model": "refreshtoken"
-    }
-},
-{
-    "model": "contenttypes.contenttype",
-    "pk": 39,
-    "fields": {
-        "app_label": "garpix_auth",
         "model": "accesstoken"
     }
 },
 {
     "model": "sessions.session",
-    "pk": "bmkrdfeutnguye07gta97p3wniea4xp7",
+    "pk": "uh94j59p4blyj3ymsp53w1zuq12v2zsx",
     "fields": {
-        "session_data": ".eJxVjEEOwiAQRe_C2hAGgVKX7nsGwgyDVA0kpV0Z765NutDtf-_9lwhxW0vYOi9hTuIiQJx-N4z04LqDdI_11iS1ui4zyl2RB-1yaomf18P9Oyixl2-dHRFz9oqVicYzZUDt8hjJD94qSg7ZJZfMaFFpBDsY1AD-rECTBRTvDw8iOCU:1mysGx:U2628hnwV8gWe-Q7FBO4g2TyYeklq3_ioILaBzWBQZg",
-        "expire_date": "2022-01-02T09:14:27.885Z"
+        "session_data": ".eJxVjEEOwiAQRe_C2hAGgVKX7nsGwgyDVA0kpV0Z765NutDtf-_9lwhxW0vYOi9hTuIiQJx-N4z04LqDdI_11iS1ui4zyl2RB-1yaomf18P9Oyixl2-dHRFz9oqVicYzZUDt8hjJD94qSg7ZJZfMaFFpBDsY1AD-rECTBRTvDw8iOCU:1n0wJZ:JVE-eEtlsGE4aFzcJwNydlzamY5Lr0uop2PZEtH6FBY",
+        "expire_date": "2022-01-08T01:57:41.823Z"
     }
 },
 {
@@ -2360,7 +1692,7 @@
     "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$216000$bOMSSoDZqRbu$A+PC8dRrNFs89W1jA+xFYSzaU+amwVfNECaeh2Da97w=",
-        "last_login": "2021-12-19T09:14:27.874Z",
+        "last_login": "2021-12-25T01:57:41.817Z",
         "is_superuser": true,
         "username": "admin",
         "first_name": "",
@@ -2402,84 +1734,42 @@
     }
 },
 {
-    "model": "photo.albumtags",
+    "model": "photo.tags",
     "pk": 1,
     "fields": {
         "title": "Кошки"
     }
 },
 {
-    "model": "photo.albumtags",
+    "model": "photo.tags",
     "pk": 2,
     "fields": {
         "title": "Животные"
     }
 },
 {
-    "model": "photo.albumtags",
+    "model": "photo.tags",
     "pk": 3,
     "fields": {
         "title": "Люди"
     }
 },
 {
-    "model": "photo.albumtags",
+    "model": "photo.tags",
     "pk": 4,
     "fields": {
         "title": "Отдых"
     }
 },
 {
-    "model": "photo.albumtags",
+    "model": "photo.tags",
     "pk": 5,
     "fields": {
         "title": "Природа"
     }
 },
 {
-    "model": "photo.albumtags",
-    "pk": 6,
-    "fields": {
-        "title": "Машины"
-    }
-},
-{
-    "model": "photo.phototags",
-    "pk": 1,
-    "fields": {
-        "title": "Кошки"
-    }
-},
-{
-    "model": "photo.phototags",
-    "pk": 2,
-    "fields": {
-        "title": "Животные"
-    }
-},
-{
-    "model": "photo.phototags",
-    "pk": 3,
-    "fields": {
-        "title": "Люди"
-    }
-},
-{
-    "model": "photo.phototags",
-    "pk": 4,
-    "fields": {
-        "title": "Отпуск"
-    }
-},
-{
-    "model": "photo.phototags",
-    "pk": 5,
-    "fields": {
-        "title": "Природа"
-    }
-},
-{
-    "model": "photo.phototags",
+    "model": "photo.tags",
     "pk": 6,
     "fields": {
         "title": "Машины"
@@ -2567,7 +1857,6 @@
     "fields": {
         "title": "Люди",
         "description": "человеки в черном",
-        "author": 2,
         "created_at": "2021-12-19T15:18:58.940Z",
         "image": "user_2/4/people1.jpg",
         "image_small": "user_2/4/small_people1.jpg",
@@ -2584,7 +1873,6 @@
     "fields": {
         "title": "Еще люди",
         "description": "счастливые",
-        "author": 2,
         "created_at": "2021-12-19T15:19:36.546Z",
         "image": "user_2/4/people2.jpg",
         "image_small": "user_2/4/small_people2.jpg",
@@ -2601,7 +1889,6 @@
     "fields": {
         "title": "Гарольд который скрывает боль",
         "description": "древний мем",
-        "author": 2,
         "created_at": "2021-12-19T15:20:11.457Z",
         "image": "user_2/4/hidethepainharold.jpg",
         "image_small": "user_2/4/small_hidethepainharold.jpg",
@@ -2619,7 +1906,6 @@
     "fields": {
         "title": "Еще Гарольд",
         "description": "еще скрывает боль",
-        "author": 2,
         "created_at": "2021-12-19T15:20:53.942Z",
         "image": "user_2/4/harold2.jpg",
         "image_small": "user_2/4/small_harold2.jpg",
@@ -2637,7 +1923,6 @@
     "fields": {
         "title": "Природа1",
         "description": "красивое",
-        "author": 1,
         "created_at": "2021-12-19T15:30:03.293Z",
         "image": "user_1/3/nature1.jpeg",
         "image_small": "user_1/3/small_nature1.jpeg",
@@ -2654,7 +1939,6 @@
     "fields": {
         "title": "Природа2",
         "description": "Поле",
-        "author": 1,
         "created_at": "2021-12-19T15:30:44.053Z",
         "image": "user_1/3/nature2.jpeg",
         "image_small": "user_1/3/small_nature2.jpeg",
@@ -2668,7 +1952,6 @@
     "fields": {
         "title": "Озеро",
         "description": "горное озеро",
-        "author": 1,
         "created_at": "2021-12-19T15:31:24.052Z",
         "image": "user_1/3/nature3.jpg",
         "image_small": "user_1/3/small_nature3.jpg",
@@ -2689,7 +1972,6 @@
     "fields": {
         "title": "Толстый кот",
         "description": "очень толстый",
-        "author": 1,
         "created_at": "2021-12-19T15:32:41.337Z",
         "image": "user_1/1/Cat1.jpeg",
         "image_small": "user_1/1/small_Cat1.jpeg",
@@ -2706,7 +1988,6 @@
     "fields": {
         "title": "И еще толстый кот",
         "description": "тут их много",
-        "author": 1,
         "created_at": "2021-12-19T15:33:36.575Z",
         "image": "user_1/1/cat2.jpg",
         "image_small": "user_1/1/small_cat2.jpg",
@@ -2723,7 +2004,6 @@
     "fields": {
         "title": "Третий кот",
         "description": "Котов много не бывает",
-        "author": 1,
         "created_at": "2021-12-19T15:55:58.879Z",
         "image": "user_1/1/cat3.jpg",
         "image_small": "user_1/1/small_cat3.jpg",
@@ -2742,7 +2022,6 @@
     "fields": {
         "title": "Кот 4",
         "description": "котыыы",
-        "author": 1,
         "created_at": "2021-12-19T15:56:37.654Z",
         "image": "user_1/1/cat4.jpg",
         "image_small": "user_1/1/small_cat4.jpg",
@@ -2761,7 +2040,6 @@
     "fields": {
         "title": "Cat",
         "description": "Test post photo api",
-        "author": 1,
         "created_at": "2021-12-19T15:58:47.362Z",
         "image": "user_1/1/cat5.jpg",
         "image_small": "user_1/1/small_cat5.jpg",
@@ -2775,7 +2053,6 @@
     "fields": {
         "title": "Машина",
         "description": "",
-        "author": 1,
         "created_at": "2021-12-19T16:00:28.649Z",
         "image": "user_1/2/car1.jpg",
         "image_small": "user_1/2/small_car1.jpg",
@@ -2794,7 +2071,6 @@
     "fields": {
         "title": "Копейка",
         "description": "тоже вроде машина",
-        "author": 1,
         "created_at": "2021-12-19T16:02:51.418Z",
         "image": "user_1/2/car2.jpg",
         "image_small": "user_1/2/small_car2.jpg",
@@ -2812,7 +2088,6 @@
     "fields": {
         "title": "Машина 3",
         "description": "...",
-        "author": 1,
         "created_at": "2021-12-19T16:03:56.455Z",
         "image": "user_1/2/car3.jpeg",
         "image_small": "user_1/2/small_car3.jpeg",
