@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "97ad93ed-8db5-46c1-8587-935b1e4d68dd",
-		"name": "DRF V2 localhost",
+		"_postman_id": "a8094c63-5e70-4af8-9027-d96b6f7f35d1",
+		"name": "DRF V2 localhost Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -244,7 +244,7 @@
 						{
 							"key": "media",
 							"type": "file",
-							"src": "/home/vitaliy/Изображения/drf/cat5.jpg"
+							"src": "/home/vitaliy/Изображения/drf/cat4.jpg"
 						},
 						{
 							"key": "data",
@@ -877,6 +877,98 @@
 				"body": {
 					"mode": "raw",
 					"raw": "{\"photo_ids\":[35,36,37]}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v2/album/photo/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v2",
+						"album",
+						"photo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Большое фото валидация",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\"photos\": {\"title\": \"large\", \"description\": \"Test post photo api\", \"album\":5}}\n",
+							"type": "text"
+						},
+						{
+							"key": "media",
+							"type": "file",
+							"src": "/home/vitaliy/Изображения/drf/large_photo.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v2/album/photo/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v2",
+						"album",
+						"photo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "формат фото валидация",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\"photos\": {\"title\": \"gif\", \"description\": \"Test post photo api\", \"album\":5}}\n",
+							"type": "text"
+						},
+						{
+							"key": "media",
+							"type": "file",
+							"src": "/home/vitaliy/Изображения/drf/nyan.gif"
+						}
+					]
 				},
 				"url": {
 					"raw": "http://127.0.0.1:8000/api/v2/album/photo/",

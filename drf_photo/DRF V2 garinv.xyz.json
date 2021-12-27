@@ -832,6 +832,92 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "формат фото валидация",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\"photos\": {\"title\": \"gif\", \"description\": \"Test post photo api\", \"album\":5}}\n",
+							"type": "text"
+						},
+						{
+							"key": "media",
+							"type": "file",
+							"src": "/home/vitaliy/Изображения/drf/nyan.gif"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/photo/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						"photo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Большое фото валидация",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 677276c4d39c9f3c4d1d776cd292706a2540163b"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "data",
+							"value": "{\"photos\": {\"title\": \"large\", \"description\": \"Test post photo api\", \"album\":5}}\n",
+							"type": "text"
+						},
+						{
+							"key": "media",
+							"type": "file",
+							"src": "/home/vitaliy/Изображения/drf/large_photo.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://garinv.xyz/api/v2/album/photo/",
+					"protocol": "http",
+					"host": [
+						"garinv",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"v2",
+						"album",
+						"photo",
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
