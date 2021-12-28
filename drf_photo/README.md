@@ -34,7 +34,6 @@ http://garinv.xyz/api/v2/album/?photos=false&display_tags=false&ordering=id
 ```
 http://garinv.xyz/api/v2/album/photo/?tags=3,4&ordering=-created_at
 ```
-
 Экспорт запросов из postman в файлах:
 
 DRF V2 garinv.xyz.json

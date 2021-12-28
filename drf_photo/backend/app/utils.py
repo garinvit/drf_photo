@@ -53,29 +53,3 @@ class MyMethodsMixin:
             elif params in ["album", "-album"] and model_name == "Photo":
                 queryset = queryset.order_by(params)
         return queryset
-
-
-def sort_filter(objects, request):
-    if objects:
-        model_name = objects.first().__class__.__name__
-    else:
-        model_name = None
-    if request.query_params:
-        params = request.query_params.get("ordering")
-        if params:
-            params = params.lower()
-        tags = request.query_params.get("tags")
-        if tags:
-            tags = map(int, tags.split(","))
-            for tag in tags:
-                objects = objects.filter(tags__id=tag).distinct()
-        if params in ["id", "title", "created_at", "-id", "-title", "-created_at"]:
-            objects = objects.order_by(params)
-        elif params in ["count", "-count"] and model_name == "Album":
-            if params == "count":
-                objects = sorted(objects, key=lambda x: x.get_photo_count())
-            else:
-                objects = sorted(objects, key=lambda x: x.get_photo_count(), reverse=True)
-        elif params in ["album", "-album"] and model_name == "Photo":
-            objects = objects.order_by(params)
-    return objects

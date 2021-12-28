@@ -1,4 +1,3 @@
-from django.core.exceptions import ValidationError
 from rest_framework.test import APIClient
 from photo.models import Album, Photo, Tags
 from django.contrib.auth import get_user_model
@@ -181,9 +180,9 @@ class ApiTest(TestCase):
         self.assertEqual(photo.album.author.username, self.username)
         # много фото альбом из ссылки
         payload = {'data': """{"photos": [{"title": "car1", "description": "Несколько фото из апи1", "tags":[1,2]},
-                                        {"title": "car2", "description": "Несколько фото из апи2", "tags":[3,4]}, 
-                                        {"title": "car3", "description": "Несколько фото из апи3", "tags":[5,6]}]}""",
-                    'media': [open('../fixtures/car1.jpg', 'rb'), open('../fixtures/car2.jpg', 'rb'), open('../fixtures/car3.jpeg', 'rb')]
+        {"title": "car2", "description": "Несколько фото из апи2", "tags":[3,4]},
+        {"title": "car3", "description": "Несколько фото из апи3", "tags":[5,6]}] }""",
+                   'media': [open('../fixtures/car1.jpg', 'rb'), open('../fixtures/car2.jpg', 'rb'), open('../fixtures/car3.jpeg', 'rb')]
                    }
         response = self.api_client.post(reverse('api_v2:photo-album-pk', args=[1]), data=payload, format='multipart')
         self.assertEqual(response.status_code, 201)
@@ -193,8 +192,8 @@ class ApiTest(TestCase):
             self.assertEqual(get_photo.title, photo.get("title"))
         # много фото с указанием альбома
         payload = {'data': """{"photos": [{"title": "car4", "description": "Несколько фото из апи4", "tags":[1,2], "album": 2},
-                                        {"title": "car5", "description": "Несколько фото из апи5", "tags":[3,4], "album": 2}, 
-                                        {"title": "car6", "description": "Несколько фото из апи6", "tags":[5,6], "album": 2}]}""",
+        {"title": "car5", "description": "Несколько фото из апи5", "tags":[3,4], "album": 2},
+        {"title": "car6", "description": "Несколько фото из апи6", "tags":[5,6], "album": 2}]}""",
                    'media': [open('../fixtures/car1.jpg', 'rb'), open('../fixtures/car2.jpg', 'rb'), open('../fixtures/car3.jpeg', 'rb')]
                    }
         response = self.api_client.post(reverse('api_v2:photo'), data=payload, format='multipart')
