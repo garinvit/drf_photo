@@ -64,9 +64,9 @@ class Command(BaseCommand):
             if delete:
                 print(f"Файлы которые были удалены: \n{str_list(delete)}")
         if delete_instance:
-            objects = set(inst_deleted)
-            for i in range(len(objects)):
-                photo = objects.pop()
+            # objects = set(inst_deleted)
+            for i in range(len(inst_deleted)):
+                photo = inst_deleted.pop()
                 try:
                     print(f"Запись была удалена id:{photo.id} название: {photo.title} путь:{photo.image_small.path}")
                 except ValueError:

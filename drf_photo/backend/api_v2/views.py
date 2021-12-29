@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from drf_spectacular.utils import extend_schema
 from rest_framework import status
 from rest_framework.exceptions import MethodNotAllowed, ValidationError
 from rest_framework.generics import CreateAPIView
@@ -31,6 +32,7 @@ class CurrentUserView(APIView):
 class AlbumModelView(APIView, MyMethodsMixin):
     permission_classes = (IsAuthenticated,)
 
+    @extend_schema(request=AlbumSerializer, responses={200: AlbumSerializer})
     def get(self, request, pk_album=None, format=None, *args, **kwargs):
         context = {
             "photo_set": request.query_params.get("photos", ""),
@@ -95,6 +97,7 @@ class PhotoModelView(APIView, MyMethodsMixin):
             return Response({'count': len(serializer.data), 'photos': serializer.data})
 
     def post(self, request, pk_album=None, format=None, *args, **kwargs):
+        print(request.data)
         if pk_album:
             pk_album = self.get_object_from_model(Album, pk_album, request).id
         if request.data:

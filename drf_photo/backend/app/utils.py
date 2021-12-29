@@ -2,6 +2,9 @@ from django.http import QueryDict
 import json
 from rest_framework import parsers
 from rest_framework.exceptions import PermissionDenied, NotFound
+from django.db import connection, reset_queries
+import time
+import functools
 
 
 class MultipartJsonParser(parsers.MultiPartParser):
@@ -53,3 +56,26 @@ class MyMethodsMixin:
             elif params in ["album", "-album"] and model_name == "Photo":
                 queryset = queryset.order_by(params)
         return queryset
+
+
+def query_debugger(func):
+
+    @functools.wraps(func)
+    def inner_func(*args, **kwargs):
+
+        reset_queries()
+
+        start_queries = len(connection.queries)
+
+        start = time.perf_counter()
+        result = func(*args, **kwargs)
+        end = time.perf_counter()
+
+        end_queries = len(connection.queries)
+
+        print(f"Function : {func.__name__}")
+        print(f"Number of Queries : {end_queries - start_queries}")
+        print(f"Finished in : {(end - start):.2f}s")
+        return result
+
+    return inner_func
