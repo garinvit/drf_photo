@@ -58,7 +58,7 @@ class AlbumSerializer(serializers.ModelSerializer):
     class Meta:
         model = Album
         fields = ("id", "title", "author", "description", "created_at", "tags", "photo_count", "photo_set")
-        read_only_fields = ['created_at', 'photo_count', "photo_set"]
+        read_only_fields = ['created_at', 'photo_count', "photo_set", "author"]
         extra_kwargs = {
             'author': {'required': False},
         }
