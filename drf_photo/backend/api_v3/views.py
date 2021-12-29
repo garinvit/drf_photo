@@ -89,7 +89,7 @@ class PhotoViewSet(ModelViewSet):
 
     def update(self, request, *args, **kwargs):
         self.is_valid_album(request, request.data.get("album"))
-        return super().update(request, *args, **kwargs)
+        return super().update(request, partial=True, *args, **kwargs)
 
 
 class TagsViewSet(ModelViewSet):
